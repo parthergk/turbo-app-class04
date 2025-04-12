@@ -13,6 +13,6 @@ app.get('/', async(req:Request, res:Response)=>{
     res.json({message:"hello",name});
 })
 
-app.listen(3000, ()=>{
+app.listen(5000, ()=>{
     console.log("http server is runing on port 3000");
 })
