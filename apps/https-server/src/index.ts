@@ -4,15 +4,15 @@ import {prismaClient} from "@repo/db/client";
 const app = Express();
 
 app.get('/', async(req:Request, res:Response)=>{
-    const newName = await prismaClient.user.create({
+    await prismaClient.user.create({
         data:{
-            name: "Gaurav Kumar"
+            name: "Parther"
         }
-    }) 
-    const name = newName.name;
+    })
+    const name = await prismaClient.user.findFirst();
     res.json({message:"hello",name});
 })
 
 app.listen(5000, ()=>{
-    console.log("http server is runing on port 3000");
+    console.log("http server is runing on port 5000");
 })

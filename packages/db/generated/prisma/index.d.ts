@@ -1987,7 +1987,6 @@ export namespace Prisma {
   }
 
   export type UserCreateInput = {
-    id?: number
     name: string
   }
 
