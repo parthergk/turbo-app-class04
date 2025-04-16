@@ -19,7 +19,8 @@ jobs:
         with:
           host: 13.61.7.19
           username: ubuntu
-          key: ${{secrets.PRIVATE_SSH_KEY}}
+          key: ${{secrets.PRIVATE_KEY}}
+
           port: 22
 
           scritp: | 
