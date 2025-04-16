@@ -26,7 +26,7 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             nvm use 22
 
-            cd home/ubuntu/turbo-app-class04
+            cd /home/ubuntu/turbo-app-class04
             git pull origin main
             pnpm install
             pnpm run build
