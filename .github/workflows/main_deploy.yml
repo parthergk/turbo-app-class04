@@ -24,6 +24,4 @@ jobs:
           script: | 
             cd home/ubuntu/turbo-app-class04
             git pull origin main
-            pnpm install
-            pnpm run build
-            pm2 restart ft-server && pm2 restart https-server pm2 restart ws-server
+            node -v
