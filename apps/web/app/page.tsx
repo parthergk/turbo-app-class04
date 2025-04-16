@@ -4,7 +4,7 @@ export default async function Home() {
   
   return (
     <div>
-      Branch Production
+      Branch Main
       Hello Gaurav: 
       {user?.name}
     </div>
