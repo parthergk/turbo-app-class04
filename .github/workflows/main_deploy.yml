@@ -21,7 +21,7 @@ jobs:
           username: ubuntu
           key: ${{secrets.PRIVATE_KEY}}
           port: 22
-          scritp: | 
+          script: | 
             cd home/ubuntu/turbo-app-class04
             git pull origin main
             pnpm install
