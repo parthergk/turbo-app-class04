@@ -30,6 +30,6 @@ jobs:
             git pull origin main
             pnpm install
             pnpm run build
-            pm2 restart ft-server
+            pm2 restart web
             pm2 restart https-server
             pm2 restart ws-server
