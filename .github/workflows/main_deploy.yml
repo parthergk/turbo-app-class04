@@ -21,7 +21,15 @@ jobs:
           username: ubuntu
           key: ${{secrets.PRIVATE_KEY}}
           port: 22
-          script: | 
+          script: |
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm use 22
+
             cd home/ubuntu/turbo-app-class04
             git pull origin main
-            node -v
+            pnpm install
+            pnpm run build
+            pm2 restart ft-server
+            pm2 restart https-server
+            pm2 restart ws-server
