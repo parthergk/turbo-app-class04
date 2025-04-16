@@ -20,12 +20,10 @@ jobs:
           host: 13.61.7.19
           username: ubuntu
           key: ${{secrets.PRIVATE_KEY}}
-
           port: 22
-
           scritp: | 
             cd home/ubuntu/turbo-app-class04
             git pull origin main
             pnpm install
-            pnpm build
+            pnpm run build
             pm2 restart ft-server && pm2 restart https-server pm2 restart ws-server
