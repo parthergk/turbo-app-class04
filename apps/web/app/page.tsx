@@ -4,7 +4,7 @@ export default async function Home() {
   
   return (
     <div>
-      Hello Gaurav
+      Hello Gaurav: 
       {user?.name}
     </div>
   );
