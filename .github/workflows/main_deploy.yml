@@ -1,0 +1,30 @@
+name: Deploy staging app
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Push to EC2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: action/checkout@v4
+
+      - name: Executing remote ssh command using ssh key
+        uses: appleboy/ssh-action@v4
+        with:
+          host: 13.61.7.19
+          username: ubuntu
+          key: ${{secrets.PRIVATE_SSH_KEY}}
+          port: 22
+
+          scritp: | 
+            cd home/ubuntu/turbo-app-class04
+            git pull origin main
+            pnpm install
+            pnpm build
+            pm2 restart ft-server && pm2 restart https-server pm2 restart ws-server
